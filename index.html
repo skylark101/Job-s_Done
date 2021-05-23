@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job's Done</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+  </head>
+<body id="body">
+  <div id="glass">
+  <header class="hdr">
+    <button id="more">
+      <i class="fa fa-bolt" style="font-size:35px;color:red"></i>
+    </button>
+    <div class="heder">
+      <h1><b>JOB's DONE</b></h1>
+    </div>
+  </header>
+  <div class="main">
+
+
+    <div class="options">
+      <div id="others">
+        <div><button id="bt1"><i class="fa fa-plus"></i></button> Add a Job</div>
+        <div style="padding-top: 20px;"><button id="bt2"><i class="fa fa-search"> </i></button> View your Completed Jobs</div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="glass_Card1">
+        <div class="impt_job">
+          <h2>Get your hands on this Job!!</h2>
+          <div style="text-align:center;" class="job">
+            <span style="font-weight: bolder;" id="job_name">
+            </span>
+          </div>
+          <h3>Time remaining : <span id="priority"></span></h3>
+          <p>Done already ?<br> Let us know and be ready for your next Job <button onclick="update()" id="check">DONE</button></p> 
+        </div>
+      </div>
+
+      <div class="glass_Card2">
+        <div class="queue">
+          <h3>Your upcoming tasks are as follows </h3> 
+          <div class="tasks">
+            <table id="table2" style="width:500px">
+            <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Detail</th>
+                  <th>Deadline</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <div class="form2">
+      <form id = "form" onsubmit="return false">
+        <label for="job"><b>Job Title</b></label>
+        <input id="inp1" type="text" required> <br>
+        <div class="clr"></div>
+
+        <label style="position:relative;top:20px;" for="details"><b>Job Details</b></label>
+        <textarea  name="deatil" id="detail" cols="30" rows="5" required></textarea> <br>
+        <div class="clr"></div> 
+
+        <label for="deadline"><b>Deadline</b></label>
+        <input  id="inp2" type="time" required> <br>
+        <div class="clr"></div>
+
+        <label for="priority"><b>Priority</b></label>
+        <input  id="inp3" type="text"  required placeholder="A number from 1 to 9 (1 being highest)"> <br>
+        <div class="clr"></div>
+
+        <button type="submit" onclick="setjob();display('form');" id="set_job">ADD</button>
+      </form>
+    </div>
+  <button id="history">HISTORY</button>  
+  <div id="hist">
+    <table id="table1"style="width:500px" >
+      <h2>History of Jobs</h2>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Detail</th>
+          <th>Deadline</th>
+          <th></th>
+        </tr>
+        
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+  <div id="complete">
+    <table id="table3" style="width:500px">
+      <h2>Your Completed Jobs</h2>
+    <thead>
+        <tr>
+          <th>Name</th>
+          <th>Detail</th>
+          <th>Deadline</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>
