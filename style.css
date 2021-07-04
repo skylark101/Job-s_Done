@@ -267,5 +267,5 @@ td{
 }
 .git a{
   text-decoration: none;
-  color:black;
+  color:black !important;
 }
